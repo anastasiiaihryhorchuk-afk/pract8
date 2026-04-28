@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        /* Додаємо стилі для плавності */
+        #text {
+            transition: all 0.6s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+            transform-origin: left;
+        }
+
+        /* Клас, який ми будемо додавати через JS */
+        .hidden {
+            opacity: 0;
+            transform: scale(0) rotate(-10deg);
+            filter: blur(10px);
+            pointer-events: none; /* Щоб не можна було взаємодіяти з невидимим текстом */
+        }
+    </style>
+</head>
+<body>
+
+<button id="toggleBtn">Показати/Сховати</button>
+<p id="text">kuku</p>
+<p>+вайб</p>
+
+<script>
+    const btn = document.getElementById('toggleBtn');
+    const text = document.getElementById('text');
+
+    btn.onclick = function() {
+        // toggle просто додає клас, якщо його немає, і видаляє, якщо він є
+        text.classList.toggle('hidden');
+    };
+</script>
+
+</body>
+</html>

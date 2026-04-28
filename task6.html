@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    button { padding: 10px; }
+  </style>
+</head>
+<body>
+<style>
+  body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+  }
+</style>
+<p>Тумбочка</p> 
+<br>
+<button>Натисни</button>
+
+<script>
+const button = document.querySelector("button");
+const text = document.querySelector("p");
+
+function getRandomColor() {
+    return "#" + Math.floor(Math.random() * 16777215).toString(16);
+}
+
+button.addEventListener("click", () => {
+    const textColor = getRandomColor();
+    const bgColor = getRandomColor();
+
+    text.style.color = textColor;
+    document.body.style.backgroundColor = bgColor;
+});
+</script>
+
+</body>
+</html>
